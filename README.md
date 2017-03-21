@@ -5,7 +5,7 @@ This repository contains several libraries which can be used to control the Mono
 * Mono.Debugging.Soft: Mono.Debugging backend for the Mono Soft Debugger.
 
 Dependencies
-============
+=============
 
 The libraries in this repository have external dependencies, specifically:
 
