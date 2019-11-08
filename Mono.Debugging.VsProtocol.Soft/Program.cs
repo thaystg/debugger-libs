@@ -36,15 +36,15 @@ namespace Mono.Debugger.VsProtocol.Soft
 
 		static protected void OnDebugAdaptorRequestReceived (object sender, RequestReceivedEventArgs e)
 		{
-			file.WriteLine ("OnDebugAdaptorRequestReceived - " + e.Command);
-			file.Flush ();
 			if (e.Command == "initialize") {
 				e.Response = new InitializeResponse ();
 			} else if (e.Command == "launch") {
-				//var ep = new IPEndPoint (IPAddress.Loopback, 5555);
+				//TODO - find the right way to laucnh vm, maybe using softDebuggerSession
+				System.Threading.Thread.Sleep (1000);
+				var ep = new IPEndPoint (IPAddress.Loopback, 5556);
 				//// Wait for the app to reach the Sleep () in attach ().
-				//vm = VirtualMachineManager.Connect (ep);
-				try {
+				vm = VirtualMachineManager.Connect (ep);
+				/*try {
 					var ops = new DebuggerSessionOptions {
 						ProjectAssembliesOnly = true,
 						EvaluationOptions = EvaluationOptions.DefaultOptions
@@ -59,7 +59,7 @@ namespace Mono.Debugger.VsProtocol.Soft
 				catch (Exception ex) {
 					file.WriteLine (ex.ToString());
 					file.Flush ();
-				}
+				}*/
 				e.Response = new LaunchResponse ();
 			} else if (e.Command == "configurationDone") {
 				e.Response = new ConfigurationDoneResponse ();
@@ -69,13 +69,7 @@ namespace Mono.Debugger.VsProtocol.Soft
 				bool insideLoadedRange;
 				bool generic;
 				foreach (var bp in args.Breakpoints) {
-					file.WriteLine ("args.Source.Name - " + args.Source.Name);
-					file.WriteLine ("bp.Line - " + bp.Line);
-					file.Flush ();
 					foreach (var location in softDebuggerSession.FindLocationsByFile (args.Source.Name, bp.Line, 0, out generic, out insideLoadedRange)) {
-						file.WriteLine ("Method - " + location.Method.Name);
-						file.WriteLine ("ILOffset - " + location.ILOffset);
-						file.Flush ();
 						vm.SetBreakpoint (location.Method, location.ILOffset);
 					}
 				}
@@ -83,6 +77,7 @@ namespace Mono.Debugger.VsProtocol.Soft
 			} else if (e.Command == "setFunctionBreakpoints") {
 				e.Response = new SetFunctionBreakpointsResponse ();
 				protocolClient.SendEvent (new StoppedEvent (StoppedEvent.ReasonValue.Breakpoint));
+				vm.Resume();
 			} else if (e.Command == "stackTrace") {
 				e.Response = new StackTraceResponse ();
 			}
@@ -90,14 +85,11 @@ namespace Mono.Debugger.VsProtocol.Soft
 
 		static protected void OnDebugAdaptorRequestCompleted (object sender, RequestCompletedEventArgs e)
 		{
-			file.WriteLine ("OnDebugAdaptorRequestCompleted - " + e.Command);
-			file.Flush ();
 		}
 
 		static void Main (string[] args)
 		{
 			softDebuggerSession = new SoftDebuggerSession ();
-			file = new System.IO.StreamWriter (@"/Users/thaysgrazia/saida2.txt");
 			protocolClient = new DebugProtocolClient (Console.OpenStandardInput (), Console.OpenStandardOutput ());
 			protocolClient.RequestReceived += OnDebugAdaptorRequestReceived;
 			protocolClient.RequestCompleted += OnDebugAdaptorRequestCompleted;

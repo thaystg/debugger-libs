@@ -37,7 +37,7 @@
       <HintPath>..\packages\Microsoft.VisualStudio.Shared.VsCodeDebugProtocol.15.8.20719.1\lib\net45\Microsoft.VisualStudio.Shared.VSCodeDebugProtocol.dll</HintPath>
     </Reference>
     <Reference Include="MonoDevelop.Debugger.VsCodeDebugProtocol">
-      <HintPath>..\..\vsmac\release-8.3\monodevelop\main\build\AddIns\MonoDevelop.Debugger.VsCodeDebugProtocol\MonoDevelop.Debugger.VsCodeDebugProtocol.dll</HintPath>
+      <HintPath>..\..\monodevelop\main\build\AddIns\MonoDevelop.Debugger.VsCodeDebugProtocol\MonoDevelop.Debugger.VsCodeDebugProtocol.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
