@@ -153,7 +153,7 @@ namespace Mono.Debugging.Soft
 			}
 		}
 		
-		void StartConnection (SoftDebuggerStartInfo dsi)
+		public void StartConnection (SoftDebuggerStartInfo dsi)
 		{
 			startArgs = dsi.StartArgs;
 			
@@ -196,7 +196,7 @@ namespace Mono.Debugging.Soft
 			ConnectionStarting (startArgs.ConnectionProvider.BeginConnect (dsi, callback), dsi, false, 0);
 		}
 		
-		void StartLaunching (SoftDebuggerStartInfo dsi)
+		public void StartLaunching (SoftDebuggerStartInfo dsi)
 		{
 			var args = (SoftDebuggerLaunchArgs) dsi.StartArgs;
 			var executable = string.IsNullOrEmpty (args.MonoExecutableFileName) ? "mono" : args.MonoExecutableFileName;
@@ -275,7 +275,7 @@ namespace Mono.Debugging.Soft
 			return false;
 		}
 		
-		protected void StartConnecting (SoftDebuggerStartInfo dsi)
+		public void StartConnecting (SoftDebuggerStartInfo dsi)
 		{
 			StartConnecting (dsi, dsi.StartArgs.MaxConnectionAttempts, dsi.StartArgs.TimeBetweenConnectionAttempts);
 		}
@@ -1462,7 +1462,7 @@ namespace Mono.Debugging.Soft
 			yield break;
 		}
 		
-		IList<Location> FindLocationsByFile (string file, int line, int column, out bool genericTypeOrMethod, out bool insideLoadedRange)
+		public IList<Location> FindLocationsByFile (string file, int line, int column, out bool genericTypeOrMethod, out bool insideLoadedRange)
 		{
 			var locations = new List<Location> ();
 
