@@ -21,6 +21,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MonoDevelop.Debugger.Tests.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mono.Debugging.VsProtocol.Soft", "Mono.Debugging.VsProtocol.Soft\Mono.Debugging.VsProtocol.Soft.csproj", "{7547E657-CFB3-4D3F-9A5D-0A5BFF4B81A9}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sdb", "Sdb\Sdb.csproj", "{B63285E4-910A-4861-94BE-0047BDF4716E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -63,6 +65,10 @@ Global
 		{7547E657-CFB3-4D3F-9A5D-0A5BFF4B81A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7547E657-CFB3-4D3F-9A5D-0A5BFF4B81A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7547E657-CFB3-4D3F-9A5D-0A5BFF4B81A9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B63285E4-910A-4861-94BE-0047BDF4716E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B63285E4-910A-4861-94BE-0047BDF4716E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B63285E4-910A-4861-94BE-0047BDF4716E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B63285E4-910A-4861-94BE-0047BDF4716E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{7A55BE57-81C9-45EC-9C7C-7F97D0508171} = {66CF303B-09F8-4123-B869-0608D54B1970}

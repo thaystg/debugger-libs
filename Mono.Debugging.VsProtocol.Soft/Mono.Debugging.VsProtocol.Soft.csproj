@@ -60,6 +60,10 @@
       <Project>{90C99ADB-7D4B-4EB4-98C2-40BD1B14C7D2}</Project>
       <Name>Mono.Debugging</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Sdb\Sdb.csproj">
+      <Project>{B63285E4-910A-4861-94BE-0047BDF4716E}</Project>
+      <Name>Sdb</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>

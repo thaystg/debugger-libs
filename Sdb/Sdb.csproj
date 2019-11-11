@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{B63285E4-910A-4861-94BE-0047BDF4716E}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>Sdb</RootNamespace>
+    <AssemblyName>Sdb</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.8.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.Shared.VSCodeDebugProtocol">
+      <HintPath>..\packages\Microsoft.VisualStudio.Shared.VsCodeDebugProtocol.15.8.20719.1\lib\net45\Microsoft.VisualStudio.Shared.VSCodeDebugProtocol.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="..\..\sdb\src\AssemblyInfo.cs">
+      <Link>AssemblyInfo.cs</Link>
+    </Compile>
+    <Compile Include="..\..\sdb\src\CommandLine.cs">
+      <Link>CommandLine.cs</Link>
+    </Compile>
+    <Compile Include="..\..\sdb\src\Configuration.cs">
+      <Link>Configuration.cs</Link>
+    </Compile>
+    <Compile Include="..\..\sdb\src\Plugins.cs">
+      <Link>Plugins.cs</Link>
+    </Compile>
+    <Compile Include="..\..\sdb\src\Options.cs">
+      <Link>Options.cs</Link>
+    </Compile>
+    <Compile Include="..\..\sdb\src\SessionKind.cs">
+      <Link>SessionKind.cs</Link>
+    </Compile>
+    <Compile Include="..\..\sdb\src\Color.cs">
+      <Link>Color.cs</Link>
+    </Compile>
+    <Compile Include="..\..\sdb\src\Command.cs">
+      <Link>Command.cs</Link>
+    </Compile>
+    <Compile Include="..\..\sdb\src\MultiCommand.cs">
+      <Link>MultiCommand.cs</Link>
+    </Compile>
+    <Compile Include="..\..\sdb\src\LibEdit.cs">
+      <Link>LibEdit.cs</Link>
+    </Compile>
+    <Compile Include="..\..\sdb\src\Log.cs">
+      <Link>Log.cs</Link>
+    </Compile>
+    <Compile Include="..\..\sdb\src\getline.cs">
+      <Link>getline.cs</Link>
+    </Compile>
+    <Compile Include="..\..\sdb\src\CustomLogger.cs">
+      <Link>CustomLogger.cs</Link>
+    </Compile>
+    <Compile Include="..\..\sdb\src\Utilities.cs">
+      <Link>Utilities.cs</Link>
+    </Compile>
+    <Compile Include="..\..\sdb\src\State.cs">
+      <Link>State.cs</Link>
+    </Compile>
+    <Compile Include="..\..\sdb\src\Debugger.cs">
+      <Link>Debugger.cs</Link>
+    </Compile>
+    <Compile Include="..\..\sdb\src\CommandAttribute.cs">
+      <Link>CommandAttribute.cs</Link>
+    </Compile>
+    <Compile Include="..\..\sdb\src\Program.cs">
+      <Link>Program.cs</Link>
+    </Compile>
+    <Compile Include="..\..\sdb\src\Commands\ContinueCommand.cs">
+      <Link>Commands\ContinueCommand.cs</Link>
+    </Compile>
+    <Compile Include="..\..\sdb\src\Commands\RootCommand.cs">
+      <Link>Commands\RootCommand.cs</Link>
+    </Compile>
+    <Compile Include="..\..\sdb\src\Commands\DoCommand.cs">
+      <Link>Commands\DoCommand.cs</Link>
+    </Compile>
+    <Compile Include="..\..\sdb\src\Commands\ResetCommand.cs">
+      <Link>Commands\ResetCommand.cs</Link>
+    </Compile>
+    <Compile Include="..\..\sdb\src\Commands\ConfigCommand.cs">
+      <Link>Commands\ConfigCommand.cs</Link>
+    </Compile>
+    <Compile Include="..\..\sdb\src\Commands\PluginCommand.cs">
+      <Link>Commands\PluginCommand.cs</Link>
+    </Compile>
+    <Compile Include="..\..\sdb\src\Commands\QuitCommand.cs">
+      <Link>Commands\QuitCommand.cs</Link>
+    </Compile>
+    <Compile Include="..\..\sdb\src\Commands\EnvironmentCommand.cs">
+      <Link>Commands\EnvironmentCommand.cs</Link>
+    </Compile>
+    <Compile Include="..\..\sdb\src\Commands\FrameCommand.cs">
+      <Link>Commands\FrameCommand.cs</Link>
+    </Compile>
+    <Compile Include="..\..\sdb\src\Commands\CatchpointCommand.cs">
+      <Link>Commands\CatchpointCommand.cs</Link>
+    </Compile>
+    <Compile Include="..\..\sdb\src\Commands\BacktraceCommand.cs">
+      <Link>Commands\BacktraceCommand.cs</Link>
+    </Compile>
+    <Compile Include="..\..\sdb\src\Commands\RunCommand.cs">
+      <Link>Commands\RunCommand.cs</Link>
+    </Compile>
+    <Compile Include="..\..\sdb\src\Commands\SourceCommand.cs">
+      <Link>Commands\SourceCommand.cs</Link>
+    </Compile>
+    <Compile Include="..\..\sdb\src\Commands\DisassembleCommand.cs">
+      <Link>Commands\DisassembleCommand.cs</Link>
+    </Compile>
+    <Compile Include="..\..\sdb\src\Commands\ConnectCommand.cs">
+      <Link>Commands\ConnectCommand.cs</Link>
+    </Compile>
+    <Compile Include="..\..\sdb\src\Commands\StepCommand.cs">
+      <Link>Commands\StepCommand.cs</Link>
+    </Compile>
+    <Compile Include="..\..\sdb\src\Commands\PrintCommand.cs">
+      <Link>Commands\PrintCommand.cs</Link>
+    </Compile>
+    <Compile Include="..\..\sdb\src\Commands\BreakpointCommand.cs">
+      <Link>Commands\BreakpointCommand.cs</Link>
+    </Compile>
+    <Compile Include="..\..\sdb\src\Commands\DatabaseCommand.cs">
+      <Link>Commands\DatabaseCommand.cs</Link>
+    </Compile>
+    <Compile Include="..\..\sdb\src\Commands\ListenCommand.cs">
+      <Link>Commands\ListenCommand.cs</Link>
+    </Compile>
+    <Compile Include="..\..\sdb\src\Commands\DirectoryCommand.cs">
+      <Link>Commands\DirectoryCommand.cs</Link>
+    </Compile>
+    <Compile Include="..\..\sdb\src\Commands\KillCommand.cs">
+      <Link>Commands\KillCommand.cs</Link>
+    </Compile>
+    <Compile Include="..\..\sdb\src\Commands\WatchCommand.cs">
+      <Link>Commands\WatchCommand.cs</Link>
+    </Compile>
+    <Compile Include="..\..\sdb\src\Commands\AliasCommand.cs">
+      <Link>Commands\AliasCommand.cs</Link>
+    </Compile>
+    <Compile Include="..\..\sdb\src\Commands\AttachCommand.cs">
+      <Link>Commands\AttachCommand.cs</Link>
+    </Compile>
+    <Compile Include="..\..\sdb\src\Commands\HelpCommand.cs">
+      <Link>Commands\HelpCommand.cs</Link>
+    </Compile>
+    <Compile Include="..\..\sdb\src\Commands\DecompileCommand.cs">
+      <Link>Commands\DecompileCommand.cs</Link>
+    </Compile>
+    <Compile Include="..\..\sdb\src\Commands\JumpCommand.cs">
+      <Link>Commands\JumpCommand.cs</Link>
+    </Compile>
+    <Compile Include="..\..\sdb\src\Commands\ArgumentsCommand.cs">
+      <Link>Commands\ArgumentsCommand.cs</Link>
+    </Compile>
+    <Compile Include="..\..\sdb\src\Commands\ThreadCommand.cs">
+      <Link>Commands\ThreadCommand.cs</Link>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Mono.Debugging\Mono.Debugging.csproj">
+      <Project>{90C99ADB-7D4B-4EB4-98C2-40BD1B14C7D2}</Project>
+      <Name>Mono.Debugging</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Mono.Debugging.Soft\Mono.Debugging.Soft.csproj">
+      <Project>{DE40756E-57F6-4AF2-B155-55E3A88CCED8}</Project>
+      <Name>Mono.Debugging.Soft</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Mono.Debugger.Soft\Mono.Debugger.Soft.csproj">
+      <Project>{372E8E3E-29D5-4B4D-88A2-4711CD628C4E}</Project>
+      <Name>Mono.Debugger.Soft</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+</Project>
