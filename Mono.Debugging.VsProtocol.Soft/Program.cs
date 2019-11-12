@@ -77,6 +77,7 @@ namespace Mono.Debugger.VsProtocol.Soft
 				e.Response = new ScopesResponse();
 			} else if (e.Command == "continue") {
 				Mono.Debugger.Client.Debugger.Continue ();
+				e.Response = new ContinueResponse ();
 			}
 				
 		}
